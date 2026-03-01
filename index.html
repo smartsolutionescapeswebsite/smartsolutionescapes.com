@@ -17,11 +17,11 @@
                         'xs': '375px',
                     },
                     colors: {
-                        primary: '#171717', // Anthracite
-                        secondary: '#ffffff', // White
+                        primary: '#171717', // Anthrazit
+                        secondary: '#ffffff', // Weiß
                         accent: '#b6ad8d', // Gold
-                        textlight: '#ffffff', // Off-white for dark backgrounds
-                        textdark: '#99A1AF' // Dark gray for light backgrounds
+                        textlight: '#ffffff', // Hell für dunkle Hintergründe
+                        textdark: '#99A1AF' // Grau für helle Hintergründe
                     },
                     fontFamily: {
                         sans: ['Inter', 'sans-serif']
@@ -35,7 +35,6 @@
         html {
             scroll-behavior: smooth;
         }
-        /* Grundlegende Umbruch-Regeln für Überschriften */
         h1, h2 {
             overflow-wrap: break-word;
             hyphens: none;
@@ -49,7 +48,7 @@
         <div class="container mx-auto px-4">
             <div class="flex items-center justify-between h-10">
                 
-                <!-- Markennamen: Wieder linksbündig -->
+                <!-- Markennamen in Navbar: Linksbündig -->
                 <a href="#" class="text-[14px] xs:text-base sm:text-lg md:text-2xl font-bold text-accent whitespace-nowrap tracking-tight sm:tracking-normal">
                     SMARTSOLUTIONESCAPES
                 </a>
@@ -91,10 +90,10 @@
         <section id="hero" class="bg-primary text-textlight py-16 md:py-32 text-center relative overflow-hidden flex items-center min-h-[60vh] md:min-h-screen">
             <div class="absolute inset-0 bg-cover bg-center opacity-30" style="background-image: url('https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1974&q=80');"></div>
             <div class="container mx-auto relative z-10 px-4">
-                <h1 class="text-2xl xs:text-3xl lg:text-5xl xl:text-6xl font-bold mb-6 leading-tight text-white max-w-5xl mx-auto">
-                    Steigern Sie Ihre <span class="whitespace-nowrap">Airbnb Einnahmen</span> mit <br> 
-                    <!-- Markenname zentriert -->
-                    <span class="text-accent block mt-2 text-center w-full">SMARTSOLUTIONESCAPES</span>
+                <h1 class="font-bold mb-6 leading-tight text-white max-w-5xl mx-auto">
+                    <span class="text-2xl xs:text-3xl lg:text-5xl xl:text-6xl block">Steigern Sie Ihre <span class="whitespace-nowrap">Airbnb Einnahmen</span> mit</span>
+                    <!-- Markenname: Garantiert einzeilig durch whitespace-nowrap und responsive font-size -->
+                    <span class="text-accent block mt-4 text-center w-full whitespace-nowrap text-[6vw] sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl">SMARTSOLUTIONESCAPES</span>
                 </h1>
                 <p class="text-base md:text-xl mb-10 max-w-2xl mx-auto text-white opacity-90">
                     Mehr Einnahmen, weniger Aufwand, professionelles Management für Ihre Immobilie.
@@ -117,15 +116,15 @@
                     </div>
                     <div class="w-full md:w-1/2 text-base md:text-lg leading-relaxed text-textdark">
                         <p class="mb-5">
-                            Smart Solution Escapes ist Ihr vertrauenswürdiger Partner für professionelles Airbnb Co-Hosting und umfassendes Kurzzeitvermietungsmanagement. Wir verstehen die Herausforderungen, die mit der Vermietung Ihrer Immobilie verbunden sind, und bieten maßgeschneiderte Lösungen.
+                            Smart Solution Escapes ist Ihr vertrauenswürdiger Partner für professionelles Airbnb Co-Hosting und umfassendes Kurzzeitvermietungsmanagement.
                         </p>
                         <p>
-                            Unser Team aus erfahrenen Experten kümmert sich um jeden Aspekt – von der optimalen Präsentation Ihres Inserats bis zur erstklassigen Gästebetreuung. Verlassen Sie sich auf unsere Professionalität und unser Engagement.
+                            Unser Team aus erfahrenen Experten kümmert sich um jeden Aspekt – von der optimalen Präsentation Ihres Inserats bis zur erstklassigen Gästebetreuung.
                         </p>
                     </div>
                 </div>
 
-                <!-- Porträt-Bilder -->
+                <!-- Portrait-Bilder -->
                 <div class="grid grid-cols-2 gap-4 md:gap-16 max-w-2xl mx-auto">
                     <div class="text-center">
                         <div class="w-24 h-24 xs:w-32 xs:h-32 md:w-48 md:h-48 overflow-hidden rounded-full border-4 border-accent shadow-lg mb-4 mx-auto">
@@ -150,51 +149,15 @@
                 <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
                     <div class="bg-stone-800/50 p-6 md:p-8 rounded-2xl border border-stone-700 hover:border-accent transition-all duration-300">
                         <h3 class="text-xl font-semibold mb-4 text-accent">Airbnb Co-Hosting</h3>
-                        <p class="text-sm md:text-base text-stone-300">Wir übernehmen die komplette Verwaltung Ihrer Airbnb-Anzeige, sodass Sie sich um nichts kümmern müssen.</p>
+                        <p class="text-sm md:text-base text-stone-300">Wir übernehmen die komplette Verwaltung Ihrer Airbnb-Anzeige.</p>
                     </div>
                     <div class="bg-stone-800/50 p-6 md:p-8 rounded-2xl border border-stone-700 hover:border-accent transition-all duration-300">
                         <h3 class="text-xl font-semibold mb-4 text-accent">Gästekommunikation</h3>
-                        <p class="text-sm md:text-base text-stone-300">Wir sind 24/7 für Ihre Gäste da, beantworten Anfragen und koordinieren Check-ins für ein reibungsloses Erlebnis.</p>
+                        <p class="text-sm md:text-base text-stone-300">Wir sind 24/7 für Ihre Gäste da.</p>
                     </div>
                     <div class="bg-stone-800/50 p-6 md:p-8 rounded-2xl border border-stone-700 hover:border-accent transition-all duration-300">
                         <h3 class="text-xl font-semibold mb-4 text-accent">Inseratsoptimierung</h3>
-                        <p class="text-sm md:text-base text-stone-300">Professionelle Fotos und ansprechende Texte, um die Sichtbarkeit und Attraktivität Ihres Inserats zu maximieren.</p>
-                    </div>
-                    <div class="bg-stone-800/50 p-6 md:p-8 rounded-2xl border border-stone-700 hover:border-accent transition-all duration-300">
-                        <h3 class="text-xl font-semibold mb-4 text-accent">Preis-Management</h3>
-                        <p class="text-sm md:text-base text-stone-300">Dynamische Preisgestaltung und intelligente Strategien, um Ihre Einnahmen zu optimieren.</p>
-                    </div>
-                    <div class="bg-stone-800/50 p-6 md:p-8 rounded-2xl border border-stone-700 hover:border-accent transition-all duration-300">
-                        <h3 class="text-xl font-semibold mb-4 text-accent">Reinigung</h3>
-                        <p class="text-sm md:text-base text-stone-300">Koordination zuverlässiger Reinigungsdienste, um Ihre Immobilie stets in Top-Zustand zu halten.</p>
-                    </div>
-                    <div class="bg-stone-800/50 p-6 md:p-8 rounded-2xl border border-stone-700 hover:border-accent transition-all duration-300">
-                        <h3 class="text-xl font-semibold mb-4 text-accent">Rechtliche Hilfe</h3>
-                        <p class="text-sm md:text-base text-stone-300">Wir helfen Ihnen, die lokalen Vorschriften und Anforderungen zu verstehen und einzuhalten.</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Benefits Section -->
-        <section id="benefits" class="py-16 md:py-24 bg-secondary">
-            <div class="container mx-auto px-6 max-w-5xl">
-                <h2 class="text-2xl md:text-4xl font-bold text-center mb-12 text-primary">Ihre Vorteile</h2>
-                <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-                    <div class="p-8 bg-white rounded-2xl shadow-lg border border-stone-100 flex flex-col items-center text-center">
-                        <span class="text-5xl mb-6">💰</span>
-                        <h3 class="text-xl font-bold mb-3 text-primary">Mehr Einnahmen</h3>
-                        <p class="text-sm text-textdark">Durch optimierte Preise und hohe Belegungsraten steigern wir Ihre Rentabilität.</p>
-                    </div>
-                    <div class="p-8 bg-white rounded-2xl shadow-lg border border-stone-100 flex flex-col items-center text-center">
-                        <span class="text-5xl mb-6">⏰</span>
-                        <h3 class="text-xl font-bold mb-3 text-primary">Weniger Aufwand</h3>
-                        <p class="text-sm text-textdark">Wir übernehmen die gesamte Arbeit, sodass Sie Ihre Zeit für Wichtigeres nutzen können.</p>
-                    </div>
-                    <div class="p-8 bg-white rounded-2xl shadow-lg border border-stone-100 flex flex-col items-center text-center">
-                        <span class="text-5xl mb-6">🤝</span>
-                        <h3 class="text-xl font-bold mb-3 text-primary">Profi-Service</h3>
-                        <p class="text-sm text-textdark">Erstklassige Betreuung für Sie und Ihre Gäste, mit persönlicher Note und Expertise.</p>
+                        <p class="text-sm md:text-base text-stone-300">Professionelle Fotos und ansprechende Texte.</p>
                     </div>
                 </div>
             </div>
@@ -204,15 +167,10 @@
         <section id="contact" class="py-16 md:py-24 bg-primary text-white">
             <div class="container mx-auto px-6 max-w-2xl text-center">
                 <h2 class="text-2xl md:text-4xl font-bold mb-6 text-accent">Kontaktieren Sie uns</h2>
-                <p class="text-base md:text-lg mb-10 opacity-90">
-                    Bereit, Ihre Vermietung auf das nächste Level zu heben? Melden Sie sich für ein unverbindliches Beratungsgespräch.
-                </p>
                 <div class="bg-stone-800/80 p-6 md:p-8 rounded-3xl border border-stone-700 shadow-2xl">
-                    <p class="text-lg font-semibold mb-6">Schreiben Sie uns direkt:</p>
-                    <a href="mailto:smartsolutionescapes@gmail.com" class="bg-accent text-primary hover:bg-stone-300 font-bold py-3 px-3 sm:py-4 sm:px-10 rounded-full text-[13px] xs:text-[15px] sm:text-base md:text-lg transition-all duration-300 shadow-lg inline-block w-full sm:w-auto whitespace-nowrap overflow-hidden text-center">
+                    <a href="mailto:smartsolutionescapes@gmail.com" class="bg-accent text-primary hover:bg-stone-300 font-bold py-4 px-6 rounded-full text-sm xs:text-base md:text-lg transition-all duration-300 shadow-lg inline-block w-full sm:w-auto whitespace-nowrap overflow-hidden text-center">
                         smartsolutionescapes@gmail.com
                     </a>
-                    <p class="mt-8 text-xs text-stone-400 uppercase tracking-widest">Wir antworten innerhalb von 24 Stunden</p>
                 </div>
             </div>
         </section>
@@ -242,13 +200,6 @@
                     mobileMenuButton.innerHTML = isHidden 
                         ? '<svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>'
                         : '<svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>';
-                });
-
-                mobileMenu.querySelectorAll('a').forEach(link => {
-                    link.addEventListener('click', function() {
-                        mobileMenu.classList.add('hidden');
-                        mobileMenuButton.innerHTML = '<svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>';
-                    });
                 });
             }
         });
