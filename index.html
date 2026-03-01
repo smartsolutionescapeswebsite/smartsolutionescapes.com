@@ -2,7 +2,7 @@
 <html lang="de">
 <head>
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
     <title>SMARTSOLUTIONESCAPES – Airbnb Co-Hosting & Immobilienmanagement</title>
     <meta name="description" content="Smart Solution Escapes bietet professionelles Airbnb Co-Hosting und Kurzzeitvermietungsmanagement. Maximieren Sie Ihre Einnahmen und minimieren Sie Ihren Aufwand mit unserem Expertenservice.">
     <meta name="keywords" content="Airbnb Co-Hosting, Ferienvermietung, Immobilienmanagement, Gästemanagement, Kurzzeitvermietung, Smart Solution Escapes, Property Management, Vermietungsservice">
@@ -32,18 +32,23 @@
         html {
             scroll-behavior: smooth;
         }
+        /* Sicherstellen, dass Wörter auf kleinen Screens umbrechen, falls zu lang */
+        h1, h2 {
+            overflow-wrap: break-word;
+            hyphens: auto;
+        }
     </style>
 </head>
 <body class="font-sans antialiased text-textdark bg-secondary">
 
     <!-- Header / Navigation -->
-    <header class="bg-primary text-accent shadow-md py-4">
+    <header class="bg-primary text-accent shadow-md py-4 sticky top-0 z-50">
         <div class="container mx-auto flex justify-between items-center px-4">
-            <a href="#" class="text-2xl font-bold text-accent">SMARTSOLUTIONESCAPES</a>
+            <a href="#" class="text-xl md:text-2xl font-bold text-accent truncate max-w-[80%]">SMARTSOLUTIONESCAPES</a>
             
             <!-- Hamburger Icon for Mobile -->
-            <button id="mobile-menu-button" class="md:hidden text-textlight focus:outline-none">
-                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
+            <button id="mobile-menu-button" class="md:hidden text-textlight p-2 focus:outline-none" aria-label="Menü öffnen">
+                <svg id="menu-icon" class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
             </button>
 
             <!-- Desktop Navigation -->
@@ -58,66 +63,68 @@
             </nav>
         </div>
 
-        <!-- Mobile Menu (initially hidden) -->
-        <nav id="mobile-menu" class="md:hidden hidden bg-primary shadow-lg py-4">
-            <ul class="flex flex-col items-center space-y-4">
-                <li><a href="#hero" class="block text-textlight hover:text-accent transition-colors duration-300 py-2" aria-label="Start">Start</a></li>
-                <li><a href="#about" class="block text-textlight hover:text-accent transition-colors duration-300 py-2" aria-label="Über uns">Über uns</a></li>
-                <li><a href="#services" class="block text-textlight hover:text-accent transition-colors duration-300 py-2" aria-label="Leistungen">Leistungen</a></li>
-                <li><a href="#benefits" class="block text-textlight hover:text-accent transition-colors duration-300 py-2" aria-label="Vorteile">Vorteile</a></li>
-                <li><a href="#contact" class="block text-textlight hover:text-accent transition-colors duration-300 py-2" aria-label="Kontakt">Kontakt</a></li>
+        <!-- Mobile Menu -->
+        <nav id="mobile-menu" class="md:hidden hidden bg-primary border-t border-stone-800">
+            <ul class="flex flex-col py-4">
+                <li><a href="#hero" class="block px-6 py-3 text-textlight hover:bg-stone-800 hover:text-accent transition-all duration-300 border-b border-stone-800/50">Start</a></li>
+                <li><a href="#about" class="block px-6 py-3 text-textlight hover:bg-stone-800 hover:text-accent transition-all duration-300 border-b border-stone-800/50">Über uns</a></li>
+                <li><a href="#services" class="block px-6 py-3 text-textlight hover:bg-stone-800 hover:text-accent transition-all duration-300 border-b border-stone-800/50">Leistungen</a></li>
+                <li><a href="#benefits" class="block px-6 py-3 text-textlight hover:bg-stone-800 hover:text-accent transition-all duration-300 border-b border-stone-800/50">Vorteile</a></li>
+                <li><a href="#contact" class="block px-6 py-3 text-textlight hover:bg-stone-800 hover:text-accent transition-all duration-300">Kontakt</a></li>
             </ul>
         </nav>
     </header>
 
     <main>
         <!-- Hero Section -->
-        <section id="hero" class="bg-primary text-textlight py-20 md:py-32 text-center relative overflow-hidden">
-            <div class="absolute inset-0 bg-cover bg-center opacity-20" style="background-image: url('https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1974&q=80');"></div>
-            <div class="container mx-auto relative z-10 px-4">
-            <h1 class="text-4xl md:text-6xl font-bold mb-6 leading-tight text-white">
-                Maximieren Sie Ihre Airbnb-Einnahmen mit <span class="text-accent">SMARTSOLUTIONESCAPES</span>
-            </h1>
-                <p class="text-lg md:text-xl mb-8 max-w-3xl mx-auto text-white">
+        <section id="hero" class="bg-primary text-textlight py-16 md:py-32 text-center relative overflow-hidden flex items-center min-h-[60vh] md:min-h-screen">
+            <div class="absolute inset-0 bg-cover bg-center opacity-30" style="background-image: url('https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1974&q=80');"></div>
+            <div class="container mx-auto relative z-10 px-6">
+                <h1 class="text-3xl md:text-6xl font-bold mb-6 leading-tight text-white">
+                    Maximieren Sie Ihre Airbnb-Einnahmen mit <br class="hidden md:block"><span class="text-accent">SMARTSOLUTIONESCAPES</span>
+                </h1>
+                <p class="text-base md:text-xl mb-10 max-w-3xl mx-auto text-white opacity-90">
                     Mehr Einnahmen, weniger Aufwand, professionelles Management für Ihre Immobilie.
                 </p>
-                <a href="#contact" class="bg-accent text-primary hover:bg-stone-300 font-bold py-3 px-8 rounded-full text-lg transition-colors duration-300 shadow-lg block w-fit mx-auto">
-                    Jetzt Kontakt aufnehmen
-                </a>
+                <div class="flex justify-center">
+                    <a href="#contact" class="bg-accent text-primary hover:bg-stone-300 font-bold py-4 px-10 rounded-full text-lg transition-all duration-300 shadow-xl transform hover:scale-105 inline-block">
+                        Jetzt Kontakt aufnehmen
+                    </a>
+                </div>
             </div>
         </section>
 
         <!-- About Section -->
         <section id="about" class="py-16 md:py-24 bg-secondary">
-            <div class="container mx-auto px-4 max-w-4xl">
-                <h2 class="text-3xl md:text-4xl font-bold text-center mb-12 text-primary">Über Smart Solution Escapes</h2>
-                <div class="flex flex-col md:flex-row items-center gap-8 mb-12">
-                    <div class="md:w-1/2">
-                        <img src="logo.jpg" alt="Logo Smart Solution Escapes" class="rounded-lg shadow-xl w-full h-auto object-cover">
+            <div class="container mx-auto px-6 max-w-5xl">
+                <h2 class="text-2xl md:text-4xl font-bold text-center mb-10 text-primary">Über Smart Solution Escapes</h2>
+                <div class="flex flex-col md:flex-row items-center gap-10 mb-16">
+                    <div class="w-full md:w-1/2">
+                        <img src="logo.jpg" alt="Logo Smart Solution Escapes" class="rounded-2xl shadow-2xl w-full h-auto object-cover max-w-md mx-auto">
                     </div>
-                    <div class="md:w-1/2 text-lg leading-relaxed text-textdark">
-                        <p class="mb-4">
-                            Smart Solution Escapes ist Ihr vertrauenswürdiger Partner für professionelles Airbnb Co-Hosting und umfassendes Kurzzeitvermietungsmanagement. Wir verstehen die Herausforderungen, die mit der Vermietung Ihrer Immobilie verbunden sind, und bieten maßgeschneiderte Lösungen, die Ihren Aufwand minimieren und Ihre Rendite maximieren.
+                    <div class="w-full md:w-1/2 text-base md:text-lg leading-relaxed text-textdark">
+                        <p class="mb-5">
+                            Smart Solution Escapes ist Ihr vertrauenswürdiger Partner für professionelles Airbnb Co-Hosting und umfassendes Kurzzeitvermietungsmanagement. Wir verstehen die Herausforderungen, die mit der Vermietung Ihrer Immobilie verbunden sind, und bieten maßgeschneiderte Lösungen.
                         </p>
                         <p>
-                            Unser Team aus erfahrenen Experten kümmert sich um jeden Aspekt – von der optimalen Präsentation Ihres Inserats bis zur erstklassigen Gästebetreuung. Verlassen Sie sich auf unsere Professionalität, Zuverlässigkeit und unser Engagement, um den Wert Ihrer Immobilie voll auszuschöpfen.
+                            Unser Team aus erfahrenen Experten kümmert sich um jeden Aspekt – von der optimalen Präsentation Ihres Inserats bis zur erstklassigen Gästebetreuung. Verlassen Sie sich auf unsere Professionalität und unser Engagement.
                         </p>
                     </div>
                 </div>
 
-                <!-- Neue Porträt-Bilder unter dem Text/Logo -->
-                <div class="flex justify-center gap-8 md:gap-16">
+                <!-- Porträt-Bilder optimiert für mobile (nebeneinander auf kleinstem Raum) -->
+                <div class="grid grid-cols-2 gap-4 md:gap-16 max-w-2xl mx-auto">
                     <div class="text-center">
-                        <div class="w-32 h-32 md:w-48 md:h-48 overflow-hidden rounded-full border-4 border-accent shadow-lg mb-4 mx-auto">
-                            <img src="portrait1.png" alt="Auftraggeber 1" class="w-full h-full object-cover bg-stone-100">
+                        <div class="w-28 h-28 xs:w-32 xs:h-32 md:w-48 md:h-48 overflow-hidden rounded-full border-4 border-accent shadow-lg mb-4 mx-auto">
+                            <img src="portrait1.png" alt="Sebastian" class="w-full h-full object-cover bg-stone-100">
                         </div>
-                        <p class="font-semibold text-primary">Sebastian</p>
+                        <p class="font-bold text-primary text-lg">Sebastian</p>
                     </div>
                     <div class="text-center">
-                        <div class="w-32 h-32 md:w-48 md:h-48 overflow-hidden rounded-full border-4 border-accent shadow-lg mb-4 mx-auto">
-                            <img src="portrait2.png" alt="Auftraggeber 2" class="w-full h-full object-cover bg-stone-100">
+                        <div class="w-28 h-28 xs:w-32 xs:h-32 md:w-48 md:h-48 overflow-hidden rounded-full border-4 border-accent shadow-lg mb-4 mx-auto">
+                            <img src="portrait2.png" alt="Julia" class="w-full h-full object-cover bg-stone-100">
                         </div>
-                        <p class="font-semibold text-primary">Julia</p>
+                        <p class="font-bold text-primary text-lg">Julia</p>
                     </div>
                 </div>
             </div>
@@ -125,32 +132,32 @@
 
         <!-- Services Section -->
         <section id="services" class="py-16 md:py-24 bg-primary text-textlight">
-            <div class="container mx-auto px-4">
-                <h2 class="text-3xl md:text-4xl font-bold text-center mb-12 text-accent">Unsere Leistungen</h2>
-                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                    <div class="bg-stone-700 p-8 rounded-lg shadow-lg hover:shadow-2xl transition-shadow duration-300">
-                        <h3 class="text-2xl font-semibold mb-4 text-accent">Airbnb Co-Hosting</h3>
-                        <p class="text-md text-white">Wir übernehmen die komplette Verwaltung Ihrer Airbnb-Anzeige, sodass Sie sich um nichts kümmern müssen. Von der Erstellung bis zur laufenden Optimierung.</p>
+            <div class="container mx-auto px-6">
+                <h2 class="text-2xl md:text-4xl font-bold text-center mb-12 text-accent">Unsere Leistungen</h2>
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
+                    <div class="bg-stone-800/50 p-6 md:p-8 rounded-2xl border border-stone-700 hover:border-accent transition-all duration-300">
+                        <h3 class="text-xl font-semibold mb-4 text-accent">Airbnb Co-Hosting</h3>
+                        <p class="text-sm md:text-base text-stone-300">Wir übernehmen die komplette Verwaltung Ihrer Airbnb-Anzeige, sodass Sie sich um nichts kümmern müssen.</p>
                     </div>
-                    <div class="bg-stone-700 p-8 rounded-lg shadow-lg hover:shadow-2xl transition-shadow duration-300">
-                        <h3 class="text-2xl font-semibold mb-4 text-accent">Gästekommunikation</h3>
-                        <p class="text-md text-white">Wir sind 24/7 für Ihre Gäste da, beantworten Anfragen, koordinieren Check-ins und Check-outs und sorgen für ein reibungsloses Erlebnis.</p>
+                    <div class="bg-stone-800/50 p-6 md:p-8 rounded-2xl border border-stone-700 hover:border-accent transition-all duration-300">
+                        <h3 class="text-xl font-semibold mb-4 text-accent">Gästekommunikation</h3>
+                        <p class="text-sm md:text-base text-stone-300">Wir sind 24/7 für Ihre Gäste da, beantworten Anfragen und koordinieren Check-ins für ein reibungsloses Erlebnis.</p>
                     </div>
-                    <div class="bg-stone-700 p-8 rounded-lg shadow-lg hover:shadow-2xl transition-shadow duration-300">
-                        <h3 class="text-2xl font-semibold mb-4 text-accent">Inseratsoptimierung</h3>
-                        <p class="text-md text-white">Professionelle Fotos, ansprechende Texte und strategische Keyword-Platzierung, um die Sichtbarkeit und Attraktivität Ihres Inserats zu maximieren.</p>
+                    <div class="bg-stone-800/50 p-6 md:p-8 rounded-2xl border border-stone-700 hover:border-accent transition-all duration-300">
+                        <h3 class="text-xl font-semibold mb-4 text-accent">Inseratsoptimierung</h3>
+                        <p class="text-sm md:text-base text-stone-300">Professionelle Fotos und ansprechende Texte, um die Sichtbarkeit und Attraktivität Ihres Inserats zu maximieren.</p>
                     </div>
-                    <div class="bg-stone-700 p-8 rounded-lg shadow-lg hover:shadow-2xl transition-shadow duration-300">
-                        <h3 class="text-2xl font-semibold mb-4 text-accent">Preis- & Belegungsmanagement</h3>
-                        <p class="text-md text-white">Dynamische Preisgestaltung und intelligente Belegungsstrategien, um Ihre Einnahmen zu optimieren und Leerstände zu minimieren.</p>
+                    <div class="bg-stone-800/50 p-6 md:p-8 rounded-2xl border border-stone-700 hover:border-accent transition-all duration-300">
+                        <h3 class="text-xl font-semibold mb-4 text-accent">Preis-Management</h3>
+                        <p class="text-sm md:text-base text-stone-300">Dynamische Preisgestaltung und intelligente Strategien, um Ihre Einnahmen zu optimieren.</p>
                     </div>
-                    <div class="bg-stone-700 p-8 rounded-lg shadow-lg hover:shadow-2xl transition-shadow duration-300">
-                        <h3 class="text-2xl font-semibold mb-4 text-accent">Reinigung & Instandhaltung</h3>
-                        <p class="text-md text-white">Koordination zuverlässiger Reinigungsdienste und schnelle Behebung kleinerer Mängel, um Ihre Immobilie stets in Top-Zustand zu halten.</p>
+                    <div class="bg-stone-800/50 p-6 md:p-8 rounded-2xl border border-stone-700 hover:border-accent transition-all duration-300">
+                        <h3 class="text-xl font-semibold mb-4 text-accent">Reinigung</h3>
+                        <p class="text-sm md:text-base text-stone-300">Koordination zuverlässiger Reinigungsdienste, um Ihre Immobilie stets in Top-Zustand zu halten.</p>
                     </div>
-                    <div class="bg-stone-700 p-8 rounded-lg shadow-lg hover:shadow-2xl transition-shadow duration-300">
-                        <h3 class="text-2xl font-semibold mb-4 text-accent">Rechtliche & Steuerliche Unterstützung</h3>
-                        <p class="text-md text-white">Wir helfen Ihnen, die lokalen Vorschriften und steuerlichen Anforderungen zu verstehen und einzuhalten, für eine sorgenfreie Vermietung.</p>
+                    <div class="bg-stone-800/50 p-6 md:p-8 rounded-2xl border border-stone-700 hover:border-accent transition-all duration-300">
+                        <h3 class="text-xl font-semibold mb-4 text-accent">Rechtliche Hilfe</h3>
+                        <p class="text-sm md:text-base text-stone-300">Wir helfen Ihnen, die lokalen Vorschriften und Anforderungen zu verstehen und einzuhalten.</p>
                     </div>
                 </div>
             </div>
@@ -158,23 +165,23 @@
 
         <!-- Benefits Section -->
         <section id="benefits" class="py-16 md:py-24 bg-secondary">
-            <div class="container mx-auto px-4 max-w-4xl">
-                <h2 class="text-3xl md:text-4xl font-bold text-center mb-12 text-primary">Ihre Vorteile mit Smart Solution Escapes</h2>
-                <div class="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
-                    <div class="p-6 bg-white rounded-lg shadow-lg hover:shadow-xl transition-shadow duration-300">
-                        <div class="text-5xl text-accent mb-4">💰</div>
-                        <h3 class="text-xl font-semibold mb-3 text-primary">Mehr Einnahmen</h3>
-                        <p class="text-md text-textdark">Durch optimierte Preise und hohe Belegungsraten steigern wir Ihre Rentabilität.</p>
+            <div class="container mx-auto px-6 max-w-5xl">
+                <h2 class="text-2xl md:text-4xl font-bold text-center mb-12 text-primary">Ihre Vorteile</h2>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                    <div class="p-8 bg-white rounded-2xl shadow-lg border border-stone-100 flex flex-col items-center text-center">
+                        <span class="text-5xl mb-6">💰</span>
+                        <h3 class="text-xl font-bold mb-3 text-primary">Mehr Einnahmen</h3>
+                        <p class="text-sm text-textdark">Durch optimierte Preise und hohe Belegungsraten steigern wir Ihre Rentabilität.</p>
                     </div>
-                    <div class="p-6 bg-white rounded-lg shadow-lg hover:shadow-xl transition-shadow duration-300">
-                        <div class="text-5xl text-accent mb-4">⏰</div>
-                        <h3 class="text-xl font-semibold mb-3 text-primary">Weniger Aufwand</h3>
-                        <p class="text-md text-textdark">Wir übernehmen die gesamte Arbeit, sodass Sie Ihre Zeit für Wichtigeres nutzen können.</p>
+                    <div class="p-8 bg-white rounded-2xl shadow-lg border border-stone-100 flex flex-col items-center text-center">
+                        <span class="text-5xl mb-6">⏰</span>
+                        <h3 class="text-xl font-bold mb-3 text-primary">Weniger Aufwand</h3>
+                        <p class="text-sm text-textdark">Wir übernehmen die gesamte Arbeit, sodass Sie Ihre Zeit für Wichtigeres nutzen können.</p>
                     </div>
-                    <div class="p-6 bg-white rounded-lg shadow-lg hover:shadow-xl transition-shadow duration-300">
-                        <div class="text-5xl text-accent mb-4">🤝</div>
-                        <h3 class="text-xl font-semibold mb-3 text-primary">Professioneller Service</h3>
-                        <p class="text-md text-textdark">Erstklassige Betreuung für Sie und Ihre Gäste, mit persönlicher Note und Expertise.</p>
+                    <div class="p-8 bg-white rounded-2xl shadow-lg border border-stone-100 flex flex-col items-center text-center">
+                        <span class="text-5xl mb-6">🤝</span>
+                        <h3 class="text-xl font-bold mb-3 text-primary">Profi-Service</h3>
+                        <p class="text-sm text-textdark">Erstklassige Betreuung für Sie und Ihre Gäste, mit persönlicher Note und Expertise.</p>
                     </div>
                 </div>
             </div>
@@ -182,30 +189,31 @@
 
         <!-- Contact Section -->
         <section id="contact" class="py-16 md:py-24 bg-primary text-white">
-            <div class="container mx-auto px-4 max-w-2xl text-center">
-                <h2 class="text-3xl md:text-4xl font-bold mb-8 text-accent">Kontaktieren Sie uns</h2>
-                <p class="text-lg mb-8">
-                    Bereit, Ihre Airbnb-Vermietung auf das nächste Level zu heben? Kontaktieren Sie uns noch heute für ein unverbindliches Beratungsgespräch.
+            <div class="container mx-auto px-6 max-w-2xl text-center">
+                <h2 class="text-2xl md:text-4xl font-bold mb-6 text-accent">Kontaktieren Sie uns</h2>
+                <p class="text-base md:text-lg mb-10 opacity-90">
+                    Bereit, Ihre Vermietung auf das nächste Level zu heben? Melden Sie sich für ein unverbindliches Beratungsgespräch.
                 </p>
-                <div class="bg-stone-700 p-8 rounded-lg shadow-lg">
-                    <p class="text-xl font-semibold mb-4">Senden Sie uns eine E-Mail:</p>
-                    <a href="mailto:smartsolutionescapes@gmail.com" class="bg-accent text-primary hover:bg-stone-300 font-bold py-3 px-8 rounded-full text-lg transition-colors duration-300 shadow-lg block w-fit mx-auto">
+                <div class="bg-stone-800/80 p-8 rounded-3xl border border-stone-700 shadow-2xl">
+                    <p class="text-lg font-semibold mb-6">Schreiben Sie uns direkt:</p>
+                    <a href="mailto:smartsolutionescapes@gmail.com" class="bg-accent text-primary hover:bg-stone-300 font-bold py-4 px-6 md:px-10 rounded-full text-base md:text-lg transition-all duration-300 shadow-lg inline-block w-full sm:w-auto break-all">
                         smartsolutionescapes@gmail.com
                     </a>
-                    <p class="mt-6 text-sm text-gray-400">Wir freuen uns darauf, von Ihnen zu hören!</p>
+                    <p class="mt-8 text-xs text-stone-400 uppercase tracking-widest">Wir antworten innerhalb von 24 Stunden</p>
                 </div>
             </div>
         </section>
     </main>
 
     <!-- Footer -->
-    <footer class="bg-primary text-white py-8 text-center text-sm">
-        <div class="container mx-auto px-4">
+    <footer class="bg-primary text-stone-400 py-10 text-center text-sm border-t border-stone-800">
+        <div class="container mx-auto px-6">
             <p>&copy; 2026 Smart Solution Escapes. Alle Rechte vorbehalten.</p>
-            <p class="mt-2">
-                <a href="impressum.html" class="hover:text-accent transition-colors duration-300">Impressum</a> |
+            <div class="mt-4 flex justify-center space-x-4">
+                <a href="impressum.html" class="hover:text-accent transition-colors duration-300">Impressum</a>
+                <span>|</span>
                 <a href="datenschutz.html" class="hover:text-accent transition-colors duration-300">Datenschutz</a>
-            </p>
+            </div>
         </div>
     </footer>
 
@@ -217,11 +225,18 @@
             if (mobileMenuButton && mobileMenu) {
                 mobileMenuButton.addEventListener('click', function() {
                     mobileMenu.classList.toggle('hidden');
+                    // Icon-Wechsel (optional, aber gut für UX)
+                    const isHidden = mobileMenu.classList.contains('hidden');
+                    mobileMenuButton.innerHTML = isHidden 
+                        ? '<svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>'
+                        : '<svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>';
                 });
 
+                // Menü schließen wenn ein Link geklickt wird
                 mobileMenu.querySelectorAll('a').forEach(link => {
                     link.addEventListener('click', function() {
                         mobileMenu.classList.add('hidden');
+                        mobileMenuButton.innerHTML = '<svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>';
                     });
                 });
             }
