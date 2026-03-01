@@ -13,6 +13,9 @@
         tailwind.config = {
             theme: {
                 extend: {
+                    screens: {
+                        'xs': '375px',
+                    },
                     colors: {
                         primary: '#171717', // Anthracite
                         secondary: '#ffffff', // White
@@ -32,7 +35,7 @@
         html {
             scroll-behavior: smooth;
         }
-        /* Sicherstellen, dass Wörter auf kleinen Screens umbrechen, falls zu lang */
+        /* Sicherstellen, dass Wörter auf kleinen Screens umbrechen, falls nötig, aber Markennamen schützen */
         h1, h2 {
             overflow-wrap: break-word;
             hyphens: auto;
@@ -80,10 +83,12 @@
         <section id="hero" class="bg-primary text-textlight py-16 md:py-32 text-center relative overflow-hidden flex items-center min-h-[60vh] md:min-h-screen">
             <div class="absolute inset-0 bg-cover bg-center opacity-30" style="background-image: url('https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1974&q=80');"></div>
             <div class="container mx-auto relative z-10 px-6">
-                <h1 class="text-3xl md:text-6xl font-bold mb-6 leading-tight text-white">
-                    Steigern Sie Ihre Airbnb Einnahmen mit <br class="hidden md:block"> <span class="text-accent">SMARTSOLUTIONESCAPES</span>
+                <!-- Optimierte H1: Mobile klein & geschützt, Desktop groß & einzeilig -->
+                <h1 class="text-2xl xs:text-3xl lg:text-5xl xl:text-6xl font-bold mb-6 leading-tight text-white max-w-5xl mx-auto">
+                    Steigern Sie Ihre <span class="whitespace-nowrap">Airbnb Einnahmen</span> mit <br class="hidden sm:block"> 
+                    <span class="text-accent inline-block sm:whitespace-nowrap mt-2">SMARTSOLUTIONESCAPES</span>
                 </h1>
-                <p class="text-base md:text-xl mb-10 max-w-3xl mx-auto text-white opacity-90">
+                <p class="text-base md:text-xl mb-10 max-w-2xl mx-auto text-white opacity-90">
                     Mehr Einnahmen, weniger Aufwand, professionelles Management für Ihre Immobilie.
                 </p>
                 <div class="flex justify-center">
@@ -112,16 +117,16 @@
                     </div>
                 </div>
 
-                <!-- Porträt-Bilder optimiert für mobile (nebeneinander auf kleinstem Raum) -->
+                <!-- Porträt-Bilder -->
                 <div class="grid grid-cols-2 gap-4 md:gap-16 max-w-2xl mx-auto">
                     <div class="text-center">
-                        <div class="w-28 h-28 xs:w-32 xs:h-32 md:w-48 md:h-48 overflow-hidden rounded-full border-4 border-accent shadow-lg mb-4 mx-auto">
+                        <div class="w-24 h-24 xs:w-32 xs:h-32 md:w-48 md:h-48 overflow-hidden rounded-full border-4 border-accent shadow-lg mb-4 mx-auto">
                             <img src="portrait1.png" alt="Sebastian" class="w-full h-full object-cover bg-stone-100">
                         </div>
                         <p class="font-bold text-primary text-lg">Sebastian</p>
                     </div>
                     <div class="text-center">
-                        <div class="w-28 h-28 xs:w-32 xs:h-32 md:w-48 md:h-48 overflow-hidden rounded-full border-4 border-accent shadow-lg mb-4 mx-auto">
+                        <div class="w-24 h-24 xs:w-32 xs:h-32 md:w-48 md:h-48 overflow-hidden rounded-full border-4 border-accent shadow-lg mb-4 mx-auto">
                             <img src="portrait2.png" alt="Julia" class="w-full h-full object-cover bg-stone-100">
                         </div>
                         <p class="font-bold text-primary text-lg">Julia</p>
@@ -225,14 +230,12 @@
             if (mobileMenuButton && mobileMenu) {
                 mobileMenuButton.addEventListener('click', function() {
                     mobileMenu.classList.toggle('hidden');
-                    // Icon-Wechsel (optional, aber gut für UX)
                     const isHidden = mobileMenu.classList.contains('hidden');
                     mobileMenuButton.innerHTML = isHidden 
                         ? '<svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>'
                         : '<svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>';
                 });
 
-                // Menü schließen wenn ein Link geklickt wird
                 mobileMenu.querySelectorAll('a').forEach(link => {
                     link.addEventListener('click', function() {
                         mobileMenu.classList.add('hidden');
