@@ -47,15 +47,15 @@
     <!-- Header / Navigation -->
     <header class="bg-primary text-accent shadow-md py-4 sticky top-0 z-50">
         <div class="container mx-auto px-4">
-            <div class="relative flex items-center justify-center md:justify-between h-10">
+            <div class="flex items-center justify-between h-10">
                 
-                <!-- Markennamen: Zentriert auf Mobile, linksbündig auf Desktop -->
-                <a href="#" class="text-[14px] xs:text-base sm:text-lg md:text-2xl font-bold text-accent whitespace-nowrap tracking-tight sm:tracking-normal z-10">
+                <!-- Markennamen: Wieder linksbündig -->
+                <a href="#" class="text-[14px] xs:text-base sm:text-lg md:text-2xl font-bold text-accent whitespace-nowrap tracking-tight sm:tracking-normal">
                     SMARTSOLUTIONESCAPES
                 </a>
                 
-                <!-- Hamburger Icon: Absolut positioniert auf Mobile, um Zentrierung nicht zu stören -->
-                <button id="mobile-menu-button" class="absolute right-0 md:relative md:hidden text-textlight p-2 focus:outline-none" aria-label="Menü öffnen">
+                <!-- Hamburger Icon: Rechtsbündig -->
+                <button id="mobile-menu-button" class="md:hidden text-textlight p-2 focus:outline-none" aria-label="Menü öffnen">
                     <svg id="menu-icon" class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
                     </svg>
@@ -92,8 +92,9 @@
             <div class="absolute inset-0 bg-cover bg-center opacity-30" style="background-image: url('https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1974&q=80');"></div>
             <div class="container mx-auto relative z-10 px-4">
                 <h1 class="text-2xl xs:text-3xl lg:text-5xl xl:text-6xl font-bold mb-6 leading-tight text-white max-w-5xl mx-auto">
-                    Steigern Sie Ihre <span class="whitespace-nowrap">Airbnb Einnahmen</span> mit <br class="hidden sm:block"> 
-                    <span class="text-accent inline-block mt-2 whitespace-normal sm:whitespace-nowrap">SMARTSOLUTIONESCAPES</span>
+                    Steigern Sie Ihre <span class="whitespace-nowrap">Airbnb Einnahmen</span> mit <br> 
+                    <!-- Markenname zentriert -->
+                    <span class="text-accent block mt-2 text-center w-full">SMARTSOLUTIONESCAPES</span>
                 </h1>
                 <p class="text-base md:text-xl mb-10 max-w-2xl mx-auto text-white opacity-90">
                     Mehr Einnahmen, weniger Aufwand, professionelles Management für Ihre Immobilie.
@@ -119,7 +120,7 @@
                             Smart Solution Escapes ist Ihr vertrauenswürdiger Partner für professionelles Airbnb Co-Hosting und umfassendes Kurzzeitvermietungsmanagement. Wir verstehen die Herausforderungen, die mit der Vermietung Ihrer Immobilie verbunden sind, und bieten maßgeschneiderte Lösungen.
                         </p>
                         <p>
-                            Unser Team aus erfahrenen Experten kümmert sich um jeden Aspect – von der optimalen Präsentation Ihres Inserats bis zur erstklassigen Gästebetreuung. Verlassen Sie sich auf unsere Professionalität und unser Engagement.
+                            Unser Team aus erfahrenen Experten kümmert sich um jeden Aspekt – von der optimalen Präsentation Ihres Inserats bis zur erstklassigen Gästebetreuung. Verlassen Sie sich auf unsere Professionalität und unser Engagement.
                         </p>
                     </div>
                 </div>
@@ -208,7 +209,6 @@
                 </p>
                 <div class="bg-stone-800/80 p-6 md:p-8 rounded-3xl border border-stone-700 shadow-2xl">
                     <p class="text-lg font-semibold mb-6">Schreiben Sie uns direkt:</p>
-                    <!-- E-Mail Button: Bleibt einzeilig durch text-[13px] auf kleinen Geräten -->
                     <a href="mailto:smartsolutionescapes@gmail.com" class="bg-accent text-primary hover:bg-stone-300 font-bold py-3 px-3 sm:py-4 sm:px-10 rounded-full text-[13px] xs:text-[15px] sm:text-base md:text-lg transition-all duration-300 shadow-lg inline-block w-full sm:w-auto whitespace-nowrap overflow-hidden text-center">
                         smartsolutionescapes@gmail.com
                     </a>
